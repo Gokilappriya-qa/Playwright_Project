@@ -1,12 +1,14 @@
 # Playwright TypeScript Automation Framework
 
-A scalable Playwright automation framework built using **TypeScript**, following Page Object Model (POM) and hybrid framework practices. This project demonstrates reusable automation components, test fixtures, custom test execution, and HTML reporting.
+A modular UI automation framework built using Playwright and TypeScript, following Page Object Model (POM) and hybrid framework practices. This project demonstrates reusable automation components, custom fixtures, test execution, reporting, and AI-assisted browser automation using Playwright Agents and MCP.
 
 ## 🚀 Project Overview
 
-This repository contains a Playwright-based UI automation framework designed to automate end-to-end web application workflows.
+This repository demonstrates end-to-end UI automation using Playwright with TypeScript.
 
-The framework uses a modular structure to separate page objects, test scenarios, reusable components, fixtures, test data, utilities, and reporting.
+The framework follows a modular architecture to maintain reusable page objects, test fixtures, test scenarios, utilities, test data, and reporting components.
+
+It also explores AI-assisted test automation using Playwright Agents, Playwright MCP, and AI coding assistants.
 
 ## 🛠️ Tech Stack
 
@@ -18,28 +20,54 @@ The framework uses a modular structure to separate page objects, test scenarios,
 | Playwright Test | Test execution |
 | TSX | TypeScript execution |
 | Chrome | Target browser |
+| Playwright Agents | AI-assisted test generation and execution |
+| Playwright MCP | AI-to-browser interaction |
+| GitHub Copilot | AI-assisted coding |
+| Claude | AI-assisted development |
 | HTML Reporter | Test reporting |
-| Custom Extent Reporter | Custom HTML reporting |
-| Git | Version control |
+| Custom Extent Reporter | HTML reporting |
 
 ## ✨ Framework Features
 
 - Playwright automation using TypeScript
 - Page Object Model (POM)
-- Hybrid framework structure
+- Hybrid framework architecture
 - Reusable page classes and components
-- Custom test fixtures
+- Custom Playwright test fixtures
 - Modular test organization
 - Custom test runner
-- Chrome browser execution
+- Chrome browser automation
 - Parallel test execution
 - Playwright HTML reporting
 - Custom Extent HTML reporting
 - Trace collection on test failures
-- Headed execution
-- Debug mode
-- Playwright UI mode
-- Separate test data and utility directories
+- Headed, Debug and UI execution modes
+- AI-assisted browser test generation using Playwright Agents
+- Browser automation using Playwright MCP
+- AI-assisted test development using GitHub Copilot and Claude
+
+## 🤖 AI-Assisted Test Automation
+
+This project explores AI-assisted browser automation using Playwright Agents, Playwright MCP, and AI coding assistants.
+
+### Playwright Agents
+
+- Used Playwright Agents to generate browser automation tests.
+- Executed browser tests generated with Playwright Agents.
+- Explored AI-assisted browser interactions and test scenario creation.
+
+### Playwright MCP
+
+- Configured Playwright MCP server in VS Code using MCP configuration.
+- Used AI assistants to interact with browser automation capabilities through MCP.
+- Explored AI-assisted browser testing workflows.
+
+### AI Coding Assistants
+
+- Used GitHub Copilot and Claude to assist with test script development.
+- Explored AI-assisted automation development and debugging.
+
+These tools complement the conventional Playwright TypeScript framework and demonstrate practical exploration of AI-powered testing workflows.
 
 ## 📁 Project Structure
 
@@ -52,7 +80,6 @@ Playwright_Project/
 ├── specs/
 │
 ├── tests/
-│   │
 │   ├── components/
 │   │   ├── cartflow.spec.ts
 │   │   ├── loginflow.spec.ts
@@ -85,7 +112,7 @@ Playwright_Project/
 
 ## 🏗️ Framework Architecture
 
-### 1. Components
+### Components
 Contains test specifications for different application workflows.
 
 - `cartflow.spec.ts` – Cart workflow testing
@@ -93,8 +120,8 @@ Contains test specifications for different application workflows.
 - `shoppingnavigation.spec.ts` – Shopping navigation testing
 - `shoppingshop.spec.ts` – Shopping workflow testing
 
-### 2. Pages
-Contains page classes following the Page Object Model.
+### Pages
+Contains reusable page classes following Page Object Model.
 
 - `base.page.ts` – Base page functionality
 - `cart.page.ts` – Cart page interactions
@@ -102,25 +129,20 @@ Contains page classes following the Page Object Model.
 - `login.page.ts` – Login page interactions
 - `shopping.page.ts` – Shopping page interactions
 
-### 3. Fixtures
+### Fixtures
 Contains reusable Playwright test fixtures.
 
-- `test-fixtures.ts` – Custom test fixture configuration
+- `test-fixtures.ts` – Custom fixture configuration
 
-### 4. Reporters
+### Reporters
 Contains custom test reporting implementation.
 
 - `extent-html-reporter.ts` – Custom Extent HTML reporter
 
-### 5. Test Data
-Dedicated directory for maintaining test data separately from test implementation.
-
-### 6. Utils
-Dedicated directory for reusable helper functions and utilities.
+### Test Data and Utils
+Dedicated directories for test data and reusable helper functions.
 
 ## ⚙️ Prerequisites
-
-Install the following:
 
 - Node.js
 - npm
@@ -149,43 +171,43 @@ npm install
 
 ## ▶️ Running Tests
 
-**Run default Chrome tests**
+Run default Chrome tests:
 
 ```bash
 npm test
 ```
 
-**Run Chrome tests**
+Run Chrome tests:
 
 ```bash
 npm run test:chrome
 ```
 
-**Run tests in headed mode**
+Run tests in headed mode:
 
 ```bash
 npm run test:headed
 ```
 
-**Run tests in debug mode**
+Run tests in debug mode:
 
 ```bash
 npm run test:debug
 ```
 
-**Run tests using Playwright UI mode**
+Run tests using Playwright UI mode:
 
 ```bash
 npm run test:ui
 ```
 
-**Run Cart test suite**
+Run Cart test suite:
 
 ```bash
 npm run test:cart
 ```
 
-**Run custom test runner**
+Run custom test runner:
 
 ```bash
 npm run run
@@ -195,13 +217,11 @@ npm run run
 
 ### Playwright HTML Report
 
-Generate and view the HTML report:
-
 ```bash
 npm run report
 ```
 
-Report output directory:
+Report directory:
 
 ```text
 reports/playwright-html/
@@ -209,36 +229,21 @@ reports/playwright-html/
 
 ### Custom Extent HTML Report
 
-The framework also includes a custom Extent HTML reporter.
-
 ```text
 reports/extent-report.html
 ```
 
-## 🔍 Debugging and Execution
-
-The framework supports:
-
-- Browser execution in headed mode
-- Playwright debugging
-- Interactive UI mode
-- Trace collection on test failures
-- HTML report generation
-
 ## ⚙️ Playwright Configuration
-
-The framework configuration includes:
 
 - Test directory: `./tests`
 - Test matching pattern: `**/*.spec.ts`
-- Fully parallel test execution
+- Fully parallel execution
 - Chrome browser project
 - Configurable base URL
-- HTML reporter
-- Custom Extent reporter
+- HTML and custom Extent reporting
 - Trace collection: `retain-on-failure`
 
-Default application URL:
+Default base URL:
 
 `https://www.scriptedqa.com`
 
@@ -248,10 +253,10 @@ The base URL can be overridden using the `BASE_URL` environment variable.
 
 **Gokilappriya Shanmugam**
 
-Quality Engineering Analyst | Playwright | TypeScript | Automation Testing
+Quality Engineering Analyst | QA Automation | Playwright | TypeScript | AI-Assisted Testing
 
-GitHub: [Gokilappriya-qa](https://github.com/Gokilappriya-qa)
+GitHub: https://github.com/Gokilappriya-qa
 
 ---
 
-⭐ Feel free to explore this repository and its automation framework.
+⭐ Feel free to explore the repository and automation framework.
