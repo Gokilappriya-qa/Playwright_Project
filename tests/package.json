@@ -1,0 +1,23 @@
+
+{
+  "name": "scriptedqa-playwright-pom-hybrid",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "npm run test:chrome",
+    "test:chrome": "playwright test --config playwright.config.ts --project=chrome",
+    "test:cart": "tsx runner.ts --suite cart",
+    "run": "tsx runner.ts",
+    "report": "playwright show-report reports/playwright-html",
+    "test:headed": "playwright test --config playwright.config.ts --project=chrome --headed",
+    "test:debug": "playwright test --config playwright.config.ts --debug",
+    "test:ui": "playwright test --config playwright.config.ts --ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^26.6.6",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.3"
+  }
+}
